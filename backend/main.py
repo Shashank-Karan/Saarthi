@@ -47,6 +47,10 @@ import uuid
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Saarthi API", description="Hindu Scripture Companion API")
+# Serve static files (including ads.txt) from the frontend build output
+import pathlib
+frontend_dist = pathlib.Path(__file__).parent.parent / "dist" / "public"
+app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="static")
 
 # CORS middleware
 app.add_middleware(
