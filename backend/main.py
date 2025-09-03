@@ -46,11 +46,22 @@ import uuid
 # Create tables
 Base.metadata.create_all(bind=engine)
 
+
 app = FastAPI(title="Saarthi API", description="Hindu Scripture Companion API")
-# Serve static files (including ads.txt) from the frontend build output at /static
+# Serve static files from the frontend build output at /static
 import pathlib
 frontend_dist = pathlib.Path(__file__).parent.parent / "dist" / "public"
 app.mount("/static", StaticFiles(directory=frontend_dist, html=True), name="static")
+
+# Serve ads.txt at the root for AdSense
+from fastapi.responses import FileResponse
+@app.get("/ads.txt")
+async def ads_txt():
+    ads_path = frontend_dist / "ads.txt"
+    if ads_path.exists():
+        return FileResponse(str(ads_path), media_type="text/plain")
+    else:
+        return FileResponse("", media_type="text/plain", status_code=404)
 
 # CORS middleware
 app.add_middleware(
