@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+Devanagari:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+Devanagari:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Sacred Hindu spiritual color palette */
+  --background: hsl(32, 45%, 96%);  /* Warm cream background */
+  --foreground: hsl(220, 13%, 18%);
+  --card: hsl(32, 35%, 98%);
+  --card-foreground: hsl(220, 13%, 18%);
+  --popover: hsl(32, 35%, 98%);
+  --popover-foreground: hsl(220, 13%, 18%);
+  --primary: hsl(32, 95%, 55%);  /* Sacred saffron primary */
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(220, 83%, 53%);  /* Deep spiritual blue */
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(32, 25%, 92%);
+  --muted-foreground: hsl(220, 8%, 46%);
+  --accent: hsl(43, 96%, 56%);
+  --accent-foreground: hsl(220, 13%, 18%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(32, 25%, 85%);
+  --input: hsl(32, 25%, 90%);
+  --ring: hsl(32, 95%, 55%);
+  --chart-1: hsl(32, 95%, 55%);
+  --chart-2: hsl(220, 83%, 53%);
+  --chart-3: hsl(43, 96%, 56%);
+  --chart-4: hsl(147, 78%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  --sidebar: hsl(32, 25%, 92%);
+  --sidebar-foreground: hsl(220, 13%, 18%);
+  --sidebar-primary: hsl(32, 95%, 55%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(43, 96%, 56%);
+  --sidebar-accent-foreground: hsl(220, 13%, 18%);
+  --sidebar-border: hsl(32, 25%, 85%);
+  --sidebar-ring: hsl(32, 95%, 55%);
+  
+  /* Custom spiritual CSS variables */
+  --spiritual-gradient: linear-gradient(135deg, hsl(32, 95%, 55%) 0%, hsl(43, 96%, 56%) 50%, hsl(220, 83%, 53%) 100%);
+  --sacred-glow: 0 0 20px hsla(32, 95%, 55%, 0.4);
+  --divine-shadow: 0 8px 32px hsla(32, 95%, 55%, 0.15);
+  --glass-bg: hsla(32, 45%, 98%, 0.7);
+  --glass-border: hsla(32, 95%, 55%, 0.2);
+  
+  /* Typography with sacred fonts */
+  --font-sans: 'Inter', 'Noto Sans Devanagari', sans-serif;
+  --font-serif: 'Playfair Display', 'Noto Serif Devanagari', serif;
+  --font-mono: "Fira Code", monospace;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: hsl(220, 13%, 8%);
+  --foreground: hsl(32, 25%, 92%);
+  --card: hsl(220, 13%, 12%);
+  --card-foreground: hsl(32, 25%, 92%);
+  --popover: hsl(220, 13%, 8%);
+  --popover-foreground: hsl(32, 25%, 92%);
+  --primary: hsl(32, 95%, 55%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(220, 83%, 53%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(220, 13%, 14%);
+  --muted-foreground: hsl(220, 8%, 60%);
+  --accent: hsl(43, 96%, 56%);
+  --accent-foreground: hsl(220, 13%, 8%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(220, 13%, 20%);
+  --input: hsl(220, 13%, 16%);
+  --ring: hsl(32, 95%, 55%);
+  --chart-1: hsl(32, 95%, 55%);
+  --chart-2: hsl(220, 83%, 53%);
+  --chart-3: hsl(43, 96%, 56%);
+  --chart-4: hsl(147, 78%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  --sidebar: hsl(220, 13%, 12%);
+  --sidebar-foreground: hsl(32, 25%, 92%);
+  --sidebar-primary: hsl(32, 95%, 55%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(43, 96%, 56%);
+  --sidebar-accent-foreground: hsl(220, 13%, 8%);
+  --sidebar-border: hsl(220, 13%, 20%);
+  --sidebar-ring: hsl(32, 95%, 55%);
+  
+  /* Dark mode spiritual variables */
+  --spiritual-gradient: linear-gradient(135deg, hsl(32, 95%, 55%) 0%, hsl(43, 96%, 56%) 50%, hsl(220, 83%, 53%) 100%);
+  --sacred-glow: 0 0 25px hsla(32, 95%, 55%, 0.6);
+  --divine-shadow: 0 8px 32px hsla(32, 95%, 55%, 0.25);
+  --glass-bg: hsla(220, 13%, 12%, 0.8);
+  --glass-border: hsla(32, 95%, 55%, 0.3);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Custom spiritual theme animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes divine-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+  }
+  50% { 
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 102, 0, 0.5);
+  }
+}
+
+@keyframes sacred-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes sacred-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% { 
+    transform: scale(1.02);
+    filter: brightness(1.1);
+  }
+}
+
+/* Krishna Path specific animations */
+.divine-pulse {
+  animation: divine-pulse 2s ease-in-out infinite;
+}
+
+.sacred-float {
+  animation: sacred-float 3s ease-in-out infinite;
+}
+
+.sacred-pulse {
+  animation: sacred-pulse 3s ease-in-out infinite;
+}
+
+.chat-bubble {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Enhanced glassmorphism with spiritual theme */
+.glassmorphism {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--divine-shadow);
+}
+
+/* Sacred spiritual gradient */
+.spiritual-gradient {
+  background: var(--spiritual-gradient);
+}
+
+/* Divine glow effects for floating elements */
+.floating-action {
+  box-shadow: var(--sacred-glow), var(--divine-shadow);
+  transition: all 0.3s ease;
+}
+
+.floating-action:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sacred-glow), 0 12px 40px hsla(32, 95%, 55%, 0.2);
+}
+
+/* Sacred button styles */
+.btn-sacred {
+  background: var(--spiritual-gradient);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--divine-shadow);
+}
+
+.btn-sacred:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--sacred-glow), var(--divine-shadow);
+}
+
+/* Glass card effects */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: calc(var(--radius) + 0.25rem);
+  box-shadow: var(--divine-shadow);
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Mobile responsive utilities */
+@layer utilities {
+  /* Better mobile text sizing */
+  .text-responsive {
+    @apply text-sm sm:text-base;
+  }
+  
+  /* Mobile-friendly spacing */
+  .spacing-mobile {
+    @apply space-y-3 sm:space-y-4;
+  }
+  
+  /* Mobile card padding */
+  .card-mobile {
+    @apply p-3 sm:p-4 md:p-6;
+  }
+  
+  /* Better mobile button sizing */
+  .btn-mobile {
+    @apply px-3 py-2 sm:px-4 sm:py-2 text-sm sm:text-base;
+  }
+  
+  /* Mobile container margins */
+  .container-mobile {
+    @apply mx-2 sm:mx-4 lg:mx-auto;
+  }
+}
+
+/* Improved scroll behavior on mobile */
+@media (max-width: 768px) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Better touch targets for mobile */
+  button, 
+  .btn, 
+  [role="button"], 
+  input[type="submit"], 
+  input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better mobile input sizes */
+  input, 
+  textarea, 
+  select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
