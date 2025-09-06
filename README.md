@@ -2,6 +2,11 @@
 
 Saarthi is an AI-powered Hindu scripture companion that helps users connect with ancient wisdom from texts such as the Bhagavad Gita and the Vedas. The platform offers a personalized experience, allowing users to chat with an AI companion, join a community of spiritual seekers, and access a rich library of scriptures and daily insights.
 
+## Live Demo
+
+🌐 **Deployed at:** [https://saarthi-rzwb.onrender.com/](https://saarthi-rzwb.onrender.com/)
+
+
 ## Features
 
 - **AI Chat**: Converse with an AI that understands Hindu scriptures and provides personalized spiritual insights.
